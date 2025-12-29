@@ -1,0 +1,19 @@
+.sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  height: calc(100vh - 70px);
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 15px;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  color: #2563eb;
+}

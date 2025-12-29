@@ -1,17 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+
 import { CourseProvider } from "./context/CourseContext";
+import { AuthProvider } from "./context/AuthContext";
+
+import "./index.css";
+import "./App.css";
 
 ReactDOM.render(
- <React.StrictMode>
-  <CourseProvider>
-   <App />
-  </CourseProvider>
- </React.StrictMode>,
- document.getElementById("root")
+  <React.StrictMode>
+    <AuthProvider>
+      <CourseProvider>
+        <App />
+      </CourseProvider>
+    </AuthProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
-
-reportWebVitals();

@@ -2,27 +2,23 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CourseContext } from "../context/CourseContext";
 
-function CourseDetails() {
+const CourseDetails = () => {
   const { id } = useParams();
   const { courses, updateStatus } = useContext(CourseContext);
 
-  const course = courses.find(
-    (c) => c.id.toString() === id
-  );
-
-  if (!course) return null;
+  const course = courses.find(c => c.id.toString() === id);
+  if (!course) return <p>Course not found</p>;
 
   return (
-    <div>
-      <p>{course.name}</p>
-      <p>{course.duration}</p>
-      <p>{course.status}</p>
-
+    <div className="page">
+      <h2>{course.name}</h2>
+      <p>Duration: {course.duration}</p>
+      <p>Status: {course.status}</p>
       <button onClick={() => updateStatus(course.id, "Active")}>
-        Update Status
+        Activate Course
       </button>
     </div>
   );
-}
+};
 
 export default CourseDetails;

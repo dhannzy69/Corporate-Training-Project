@@ -1,24 +1,24 @@
-import React, { createContext, useState } from "react";
+// src/context/CourseContext.js
+import { createContext, useState, useEffect } from "react";
 
 export const CourseContext = createContext();
 
 export const CourseProvider = ({ children }) => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(() => {
+    const saved = localStorage.getItem("courses");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-  const addCourse = (course) => {
-    setCourses([...courses, course]);
-  };
+  useEffect(() => {
+    localStorage.setItem("courses", JSON.stringify(courses));
+  }, [courses]);
 
-  const updateStatus = (id, status) => {
-    setCourses(
-      courses.map((c) =>
-        c.id === id ? { ...c, status } : c
-      )
-    );
+  const addCourse = (name, duration, status) => {
+    setCourses([...courses, { id: Date.now(), name, duration, status }]);
   };
 
   return (
-    <CourseContext.Provider value={{ courses, addCourse, updateStatus }}>
+    <CourseContext.Provider value={{ courses, addCourse }}>
       {children}
     </CourseContext.Provider>
   );

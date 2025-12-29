@@ -1,0 +1,63 @@
+.course-card {
+  background: linear-gradient(145deg, #ffffff, #e0f2fe);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-left: 6px solid #3b82f6;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: linear-gradient(145deg, #fef9c3, #fde68a); /* hover effect */
+  border-left: 6px solid #f59e0b;
+}
+
+.course-card h3 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.course-card a {
+  margin-top: 10px;
+  display: inline-block;
+  color: #3b82f6;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.course-card a:hover {
+  color: #9333ea;
+}
+/* ===== COMPLETION SLIDER ===== */
+.completion-slider {
+  width: 100%;
+  margin-top: 10px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* ===== DELETE BUTTON ===== */
+.delete-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
